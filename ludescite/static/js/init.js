@@ -13,7 +13,7 @@
 
 		// Nav menu list ending event
 		$('menu').click(function (event) {
-			event.preventDefault();
+			// event.preventDefault();
 			$('.menu-list').removeClass('activate');
 			$('menu').removeClass('activate');
 		})
