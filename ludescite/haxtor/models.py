@@ -39,7 +39,7 @@ class Answers(models.Model):
     ansCorrect=models.BooleanField()
 
     def __str__(self):
-        return str(str(self.ansText) + "    " + str(self.ansCorrect))
+        return str(str(self.ansText) + "    " + str(self.ansCorrect) )
 
 class UserProfile(models.Model):
     userCAT_LIST=(
@@ -52,7 +52,7 @@ class UserProfile(models.Model):
     # email=models.EmailField(max_length=254)
     # password=models.CharField(max_length=50)
     userCat = models.CharField(max_length=254,choices=userCAT_LIST)
-    point = models.IntegerField(null=True)
+    point = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user.username

@@ -3,7 +3,6 @@
 
 		$('.sidenav').sidenav();
 		$('.parallax').parallax();
-		$('.modal').modal();
 
 		// Nav menu icon click event
 		$('header .brand .menu-icon').click(function () {
@@ -13,7 +12,7 @@
 
 		// Nav menu list ending event
 		$('menu').click(function (event) {
-			event.preventDefault();
+			// event.preventDefault();
 			$('.menu-list').removeClass('activate');
 			$('menu').removeClass('activate');
 		})
@@ -22,7 +21,7 @@
 		$(".board-wrapper").css("display", "none");
 		$(".board-wrapper").fadeIn(1000);
 
-		$("a.transition").click(function (event) {
+		$(".transition").click(function (event) {
 			event.preventDefault();
 			linkLocation = this.href;
 			$(".board-wrapper").fadeOut(500, redirectPage);

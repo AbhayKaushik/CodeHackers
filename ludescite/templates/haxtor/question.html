@@ -1,7 +1,7 @@
 {% extends "haxtor/base.html" %}
 {% load staticfiles %}
 {% block body_block %}
-	
+
 	
 	<div class="board no-padding">
 		<div class="board-wrapper">
@@ -10,44 +10,29 @@
 				<!-- dashboard ============================================== -->
 				<div class="col s12 m3 dashboard">
 					<ul class="dashboard-list question-board scene-element scene-element--fadeinup">
-						<li class="dashboard-item"><a href="#">Quit</a></li>
+						<li class="dashboard-item"><a href="/haxtor/dashboard">Quit</a></li>
 					</ul>
 				</div>
 
 				<!-- content ============================================== -->
 				<div class="col s12 m9 content-wrapper custom-slider scene-element scene-element--fadeinright">
-					<p class="ques-num">Question 1</p>
-					<h3 class="question">What color is the separated piece?</h3>
-					<img src="img/puzzle.svg" alt="Question Image" class="ques-img">
+					<p class="ques-num">Question:</p>
+					<h3 class="question">{{ ques }}</h3>
+					{% comment %} <img src="img/puzzle.svg" alt="Question Image" class="ques-img"> {% endcomment %}
 
-					<form class="answers">
+					<form class="answers" action="/haxtor/group1/" method="POST">
+					{% csrf_token %}
+					{% for i in ansData%}
 						<p>
 							<label>
-								<input name="group1" class="with-gap" type="radio" />
-								<span>Red</span>
+								<input name="group1" value="{{i.ansID}}" type="radio" />
+								<span>{{i.ansText}}</span>
 							</label>
 						</p>
-						<p>
-							<label>
-								<input class="with-gap" name="group1" type="radio" />
-								<span>Yellow</span>
-							</label>
-						</p>
-						<p>
-							<label>
-								<input class="with-gap" name="group1" type="radio" />
-								<span>Green</span>
-							</label>
-						</p>
-						<p>
-							<label>
-								<input name="group1" type="radio" class="with-gap" />
-								<span>Brown</span>
-							</label>
-						</p>
+					{% endfor %}
 						<button type="submit" class="cta">Submit</button>
 					</form>
-					<div class="pagination-wrapper">
+					{% comment %} <div class="pagination-wrapper">
 						<ul class="pagination">
 							<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
 							<li class="active"><a href="#!">1</a></li>
@@ -57,7 +42,7 @@
 							<li class="waves-effect"><a href="#!">5</a></li>
 							<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
 						</ul>
-					</div>
+					</div> {% endcomment %}
 				</div>
 			</div>
 		</div>

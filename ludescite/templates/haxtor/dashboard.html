@@ -2,6 +2,7 @@
 	{% extends "haxtor/base.html" %}
 	{% load staticfiles %}
 	{% block body_block %}
+	{% csrf_token %}
 	<div class="board no-padding">
 		<div class="board-wrapper">
 			<div class="row main-content">
@@ -11,25 +12,59 @@
 					<div class="avatar">
 						<p class="welcome">Welcome</p>
 						<h3 class="name">
-							John Doe
+							{{ userdata.user.username }}
 						</h3>
-						<h5 class="score">90 Points</h5>
+						<h5 class="score">{{ userdata.point }} Points</h5>
 					</div>
 
 					<ul class="dashboard-list">
-						<li class="dashboard-item"><a href="#">Dashboard</a></li>
-						<li class="dashboard-item"><a href="#">Games</a></li>
+						<li class="dashboard-item"><a href="/haxtor/dashboard">Dashboard</a></li>
+						<li class="dashboard-item"><a href="/haxtor/question">Start Game!</a></li>
 						<li class="dashboard-item"><a href="#">Ladder</a></li>
-						<li class="dashboard-item"><a href="#">Logout</a></li>
+						<li class="dashboard-item"><a href="#modal1" class="modal-trigger">Logout</a></li>
 					</ul>
 				</div>
 
 				<!-- content ============================================== -->
-				<div class="col s12 m9 content-wrapper custom-slider">
+				<div class="col s12 m9 content-wrapper">
+					<div class="row dashboard-content-header scene-element scene-element--fadeinup">
+						<div class="col s12 m5"><img src="{% static 'img/hi.png' %}" alt="Welcome Image" class="responsive-img"></div>
+						<div class="col s12 m7">
+							<h4>About Me</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis aut ipsa est asperiores quidem et
+								necessitatibus ad fuga velit beatae!</p>
+						</div>
+					</div>
 
+					<div class="row dashboard-content-main scene-element scene-element--fadeinright">
+						<div class="legend">
+							<img src="{% static 'img/cupcake.png' %}" alt="CupCake" class="legend-img">
+							<p class="legend-text">A CupCake is a small, sweet, bite of delight. It is the lowest, sweetest level.</p>
+						</div>
+						<div class="legend">
+							<img src="{% static 'img/pastry.png' %}" alt="CupCake" class="legend-img">
+							<p class="legend-text">A Pastry is a handful piece of sweet wonder. It is the normal level of kindness and sugar.</p>
+						</div>
+						<div class="legend">
+							<img src="{% static 'img/fudgecake.png' %}" alt="CupCake" class="legend-img">
+							<p class="legend-text">A FudgeCake is a full package of chocolate and comfort. It is the highest level of supremacy, in sweets.</p>
+						</div>
+					</div>
 				</div>
 
 			</div>
+		</div>
+	</div>
+	
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Do you want to logout?</h4>
+			<p>Any unsaved changes, game progress and unsaved levels earned will be lost.</p>
+		</div>
+		<div class="modal-footer">
+			<a href="{% url 'logout' %}" class="modal-close waves-effect waves-blue btn-flat">Yes</a>
+			<a href="#!" class="modal-close waves-effect blue waves-light btn">No</a>
 		</div>
 	</div>
 	{% endblock  %}
