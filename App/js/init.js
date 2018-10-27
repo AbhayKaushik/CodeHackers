@@ -3,6 +3,7 @@
 
 		$('.sidenav').sidenav();
 		$('.parallax').parallax();
+		$('.modal').modal();
 
 		// Nav menu icon click event
 		$('header .brand .menu-icon').click(function () {
