@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Topic(models.Model):
     diffLevel_LIST=(
@@ -41,17 +41,22 @@ class Answers(models.Model):
     def __str__(self):
         return str(str(self.ansText) + "    " + str(self.ansCorrect))
 
-class User(models.Model):
+class UserProfile(models.Model):
     userCAT_LIST=(
-        (1,"kids"),
-        (2,"coder")
+        ("1","kids"),
+        ("2","coder")
     )
     uID=models.CharField(max_length=50, unique=True, primary_key=True)
-    name=models.CharField(max_length=30)
-    email=models.EmailField(max_length=254)
-    password=models.CharField(max_length=50)
-    userCat = models.CharField(max_length=1,choices=userCAT_LIST)
-    point = models.IntegerField()
+    user=models.OneToOneField(User,on_delete=models.DO_NOTHING)
+    # name=models.CharField(max_length=30)
+    # email=models.EmailField(max_length=254)
+    # password=models.CharField(max_length=50)
+    userCat = models.CharField(max_length=254,choices=userCAT_LIST)
+    point = models.IntegerField(null=True)
+
+    def __str__(self):
+        return self.user.username
+    
 
 class UserProg(models.Model):
     EvolutionTable=(

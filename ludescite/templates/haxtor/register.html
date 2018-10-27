@@ -1,0 +1,13 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form type="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        {{ profile_form.as_p }}
+        
+        <input type="submit">
+        </form>
+    </body>
+</html>
