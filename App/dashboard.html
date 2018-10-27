@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Page Title ============================================== -->
-	<title>Login | Ludescite</title>
+	<title>User | Ludescite</title>
 
 	<!-- Favicon ============================================== -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -32,47 +32,39 @@
 
 	<menu>
 		<ul class="menu-list">
-			<li class="list-item"><a href="index.html">Home</a></li>
-			<li class="list-item"><a href="about.html">About Us</a></li>
-			<li class="list-item"><a href="contact.html">Contact</a></li>
-			<li class="list-item"><a href="legal.html">Terms and Policy</a></li>
+			<li class="list-item"><a href="index.html" class="transition">Home</a></li>
+			<li class="list-item"><a href="about.html" class="transition">About Us</a></li>
+			<li class="list-item"><a href="contact.html" class="transition">Contact</a></li>
+			<li class="list-item"><a href="legal.html" class="transition">Terms and Policy</a></li>
 		</ul>
 	</menu>
 	<!-- ======================================= End of navbar -->
 
-	<div class="board">
+	<div class="board no-padding">
 		<div class="board-wrapper">
-			<div class="row">
+			<div class="row main-content">
+				
+				<!-- dashboard ============================================== -->
+				<div class="col s12 m3 dashboard">
+					<div class="avatar">
+						<p class="welcome">Welcome</p>
+						<h3 class="name">
+							John Doe
+						</h3>
+						<h5 class="score">90 Points</h5>
+					</div>
 
-				<!-- register-form ============================================== -->
-				<form class="col s12 m6 scene-element scene-element--fadeinup">
-					<div class="row">
-						<div class="input-field col s12">
-							<input id="email" type="email" class="validate">
-							<label for="email">Email</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<input id="password" type="password" class="validate">
-							<label for="password">Password</label>
-						</div>
-					</div>
-					<div class="row register-btn">
-						<button type="submit" class="cta">Login</button>
-					</div>
-				</form>
-				<!-- ======================================= End of register-form -->
-
-				<div class="col m1 push-m1 s12 hide-on-small-only vertDivider">
-					<img src="img/orDivider.png" alt="divider" class="hide-on-small-only">
+					<ul class="dashboard-list">
+						<li class="dashboard-item"><a href="#">Dashboard</a></li>
+						<li class="dashboard-item"><a href="#">Games</a></li>
+						<li class="dashboard-item"><a href="#">Ladder</a></li>
+						<li class="dashboard-item"><a href="#">Logout</a></li>
+					</ul>
 				</div>
 
-				<!-- Authentication ============================================== -->
-				<div class="col push-m1 m3 s12 auth scene-element scene-element--fadeinright">
-					<a href="#" class="btn red waves-effect waves-light">Google</a>
-					<a href="#" class="btn indigo waves-effect waves-light">Facebook</a>
-					<a href="#" class="btn purple waves-effect waves-light">Yahoo!</a>
+				<!-- content ============================================== -->
+				<div class="col s12 m9 content-wrapper custom-slider">
+
 				</div>
 
 			</div>

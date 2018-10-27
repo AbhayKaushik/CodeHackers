@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Page Title ============================================== -->
-	<title>Home | Ludescite</title>
+	<title>User | Ludescite</title>
 
 	<!-- Favicon ============================================== -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -28,9 +28,6 @@
 			<i class="material-icons menu-icon">menu</i>
 			<a href="index.html">Ludescite</a>
 		</div>
-		<div class="to-right">
-			Already a member? <a href="login.html" class="transition">Login</a>
-		</div>
 	</header>
 
 	<menu>
@@ -43,47 +40,61 @@
 	</menu>
 	<!-- ======================================= End of navbar -->
 
-	<div class="board">
+	<div class="board no-padding">
 		<div class="board-wrapper">
-			<div class="row">
+			<div class="row main-content">
 
-				<!-- introduction ============================================== -->
-				<div class="col s12 m7 scene-element scene-element--fadeinright">
-					<h1>Learn and Play with Ludescite!</h1>
-					<small>Learn it, Earn it, Own it</small>
-					<p>
-						Learning doesn't always need to be boring.
-						Best part is? It is completely free!
-					</p>
+				<!-- dashboard ============================================== -->
+				<div class="col s12 m3 dashboard">
+					<ul class="dashboard-list question-board scene-element scene-element--fadeinup">
+						<li class="dashboard-item"><a href="#">Quit</a></li>
+					</ul>
 				</div>
 
-				<!-- Features ============================================== -->
-				<div class="col s12 m5 scene-element scene-element--fadeinup">
-					<div class="row">
-						<div class="col s12 m4">
-							<div class="feature">
-								<img src="img/icon1.svg" alt="Feature Image" class="feature-img">
-								<p>Zero Supervision Required</p>
-							</div>
-						</div>
-						<div class="col s12 m4">
-							<div class="feature">
-								<img src="img/performance.svg" alt="Feature Image" class="feature-img">
-								<p>Customized Learning Curve</p>
-							</div>
-						</div>
-						<div class="col s12 m4">
-							<div class="feature">
-								<img src="img/puzzle.svg" alt="Feature Image" class="feature-img">
-								<p>Play as you Learn!</p>
-							</div>
-						</div>
+				<!-- content ============================================== -->
+				<div class="col s12 m9 content-wrapper custom-slider scene-element scene-element--fadeinright">
+					<p class="ques-num">Question 1</p>
+					<h3 class="question">What color is the separated piece?</h3>
+					<img src="img/puzzle.svg" alt="Question Image" class="ques-img">
+
+					<form class="answers">
+						<p>
+							<label>
+								<input name="group1" class="with-gap" type="radio" />
+								<span>Red</span>
+							</label>
+						</p>
+						<p>
+							<label>
+								<input class="with-gap" name="group1" type="radio" />
+								<span>Yellow</span>
+							</label>
+						</p>
+						<p>
+							<label>
+								<input class="with-gap" name="group1" type="radio" />
+								<span>Green</span>
+							</label>
+						</p>
+						<p>
+							<label>
+								<input name="group1" type="radio" class="with-gap" />
+								<span>Brown</span>
+							</label>
+						</p>
+						<button type="submit" class="cta">Submit</button>
+					</form>
+					<div class="pagination-wrapper">
+						<ul class="pagination">
+							<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+							<li class="active"><a href="#!">1</a></li>
+							<li class="waves-effect"><a href="#!">2</a></li>
+							<li class="waves-effect"><a href="#!">3</a></li>
+							<li class="waves-effect"><a href="#!">4</a></li>
+							<li class="waves-effect"><a href="#!">5</a></li>
+							<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+						</ul>
 					</div>
-				</div>
-
-				<!-- cta ============================================== -->
-				<div class="col s12 scene-element scene-element--fadeinright">
-					<a href="register.html" class="waves-effect waves-light cta transition">Register Now!</a>
 				</div>
 			</div>
 		</div>
