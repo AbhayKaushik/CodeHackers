@@ -4,12 +4,15 @@
 {% block body_block %}
 
 
+<div class="board">
+        <div class="board-wrapper">
+        
 
 <!-- main-body -->
 <div class="row">
 
     <!-- introduction ============================================== -->
-    <div class="col s12 m7">
+    <div class="col s12 m7 scene-element scene-element--fadeinright">
         <h1>Learn and Play with Ludescite!</h1>
         <small>Learn it, Earn it, Own it</small>
         <p>
@@ -19,7 +22,7 @@
     </div>
 
     <!-- Features ============================================== -->
-    <div class="col s12 m5">
+    <div class="col s12 m5 scene-element scene-element--fadeinup">
         <div class="row">
             <div class="col s12 m4">
                 <div class="feature">
@@ -43,10 +46,14 @@
     </div>
 
     <!-- cta ============================================== -->
-    <div class="col s12">
-        <a href="{% url 'haxtor:userRegister' %}" class="waves-effect waves-light cta">Register Now!</a>
+    <div class="col s12 scene-element scene-element--fadeinright">
+        <a href="{% url 'haxtor:userRegister' %}" class="waves-effect waves-light cta transition">Register Now!</a>
     </div>
 </div>
 <!-- main-body ends here -->
+    
+        
+</div>
+</div>
 
 {% endblock  %}

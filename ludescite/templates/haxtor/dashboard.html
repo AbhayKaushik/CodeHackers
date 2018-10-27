@@ -1,0 +1,35 @@
+
+	{% extends "haxtor/base.html" %}
+	{% load staticfiles %}
+	{% block body_block %}
+	<div class="board no-padding">
+		<div class="board-wrapper">
+			<div class="row main-content">
+				
+				<!-- dashboard ============================================== -->
+				<div class="col s12 m3 dashboard">
+					<div class="avatar">
+						<p class="welcome">Welcome</p>
+						<h3 class="name">
+							John Doe
+						</h3>
+						<h5 class="score">90 Points</h5>
+					</div>
+
+					<ul class="dashboard-list">
+						<li class="dashboard-item"><a href="#">Dashboard</a></li>
+						<li class="dashboard-item"><a href="#">Games</a></li>
+						<li class="dashboard-item"><a href="#">Ladder</a></li>
+						<li class="dashboard-item"><a href="#">Logout</a></li>
+					</ul>
+				</div>
+
+				<!-- content ============================================== -->
+				<div class="col s12 m9 content-wrapper custom-slider">
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	{% endblock  %}
