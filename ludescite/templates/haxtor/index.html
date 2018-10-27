@@ -1,0 +1,52 @@
+
+{% extends "haxtor/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+
+<!-- main-body -->
+<div class="row">
+
+    <!-- introduction ============================================== -->
+    <div class="col s12 m7">
+        <h1>Learn and Play with Ludescite!</h1>
+        <small>Learn it, Earn it, Own it</small>
+        <p>
+            Learning doesn't always need to be boring.
+            Best part is? It is completely free!
+        </p>
+    </div>
+
+    <!-- Features ============================================== -->
+    <div class="col s12 m5">
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="feature">
+                    <img src= "{% static "img/icon1.svg" %}" alt="Feature Image" class="feature-img">
+                    <p>Zero Supervision Required</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="feature">
+                    <img src="{% static "img/performance.svg" %}" alt="Feature Image" class="feature-img">
+                    <p>Customized Learning Curve</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="feature">
+                    <img src="{% static "img/puzzle.svg" %}" alt="Feature Image" class="feature-img">
+                    <p>Play as you Learn!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cta ============================================== -->
+    <div class="col s12">
+        <a href="{% url 'haxtor:userRegister' %}" class="waves-effect waves-light cta">Register Now!</a>
+    </div>
+</div>
+<!-- main-body ends here -->
+
+{% endblock  %}
