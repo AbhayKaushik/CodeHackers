@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Page Title ============================================== -->
+    <title>Home | Ludescite</title>
+
+    <!-- Favicon ============================================== -->
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+    <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+
+    <!-- CSS ============================================== -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400,500,600,700" rel="stylesheet">
+    <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+    <!-- navbar ============================================== -->
+    <header>
+        <div class="brand">
+            <i class="material-icons menu-icon">menu</i>
+            <a href="index.html">Ludescite</a>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="to-right">
+                <a href="{% url 'logout' %} ">Logout</a>
+        </div>
+        
+        {% else %}
+        <div class="to-right">
+            Already a member? <a href="{% url 'haxtor:user_login' %}">Login</a>
+        </div>
+        {% endif %}
+        
+    </header>
+
+    <menu>
+        <ul class="menu-list">
+            <li class="list-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="list-item"><a href="{% url 'about' %}">About Us</a></li>
+            <li class="list-item"><a href="{% url 'contact' %}">Contact</a></li>
+            <li class="list-item"><a href="{% url 'legal' %}">Terms and Policy</a></li>
+        </ul>
+    </menu>
+    <!-- ======================================= End of navbar -->
+
+    <div class="board">
+        
+        {% block body_block %}
+
+        {% endblock%}
+
+    </div>
+
+    <!-- footer ============================================== -->
+    <footer>
+        <div class="container">
+            &copy; - 2018 &bull; CodeHackers
+        </div>
+    </footer>
+    <!-- ======================================= End of footer -->
+
+    <!-- Scripts ============================================== -->
+    <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+    <script src="{% static "js/materialize.js" %}"></script>
+    <script src="{% static "js/init.js" %}"></script>
+
+</body>
+
+</html>

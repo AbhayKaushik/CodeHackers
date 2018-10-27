@@ -1,15 +1,43 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <form action="{% url 'haxtor:user_login' %}" method="POST">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name = username placeholder="Enter UserName">
-        <label for="password">Password:</label>
-        <input type="password" name =password>
-        
-        <input type="submit" value="Login">
+{% extends "haxtor/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+
+<div class="row">
+
+        <!-- register-form ============================================== -->
+        <form action="{% url 'haxtor:user_login' %}" method="POST" class="col s12 m6">
+                {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" type="text" name="username" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" name="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row register-btn">
+                <button type="submit" class="cta">Login</button>
+            </div>
         </form>
-    </body>
-</html>
+        <!-- ======================================= End of register-form -->
+
+        <div class="col m1 push-m1 s12 hide-on-small-only vertDivider">
+            <img src="{% static "img/orDivider.png" %}" alt="divider" class="hide-on-small-only">
+        </div>
+
+        <!-- Authentication ============================================== -->
+        <div class="col push-m1 m3 s12 auth">
+            <a href="#" class="btn red waves-effect waves-light">Google</a>
+            <a href="#" class="btn indigo waves-effect waves-light">Facebook</a>
+            <a href="#" class="btn purple waves-effect waves-light">Yahoo!</a>
+        </div>
+
+    </div>
+
+{% endblock  %}

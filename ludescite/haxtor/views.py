@@ -7,6 +7,14 @@ from django.contrib.auth.decorators import login_required
 from haxtor.models import Answers,Questions,Topic,UserProfile,UserProg
 from haxtor.forms import RegisterForm,UserProfileForm
 
+
+def about(request):
+    return render(request,"haxtor/about.html")
+def contact(request):
+    return render(request,"haxtor/contact.html")
+def legal(request):
+    return render(request,"haxtor/legal.html")
+
 # Create your views here.
 def user_login(request):
     if request.method=='POST':
@@ -17,8 +25,13 @@ def user_login(request):
         if user: 
             if user.is_active:
                 login(request,user)
-                print("LOGGED IN")
+                print("LOGGED IN")                
                 return HttpResponseRedirect(reverse('index'))
+        else:
+            
+            print("Someone tried to login and failed !")
+            print("Username : {} and password {} ".format(username,password))
+            return HttpResponse("Invalid login details supplied !")
     else:
         return render(request,'haxtor/login.html',{})
 
@@ -28,6 +41,8 @@ def special(request):
     return HttpResponse("You're Logged in")
 def index(request):
     return render(request,"haxtor/index.html")
+
+
 
 def UserRegister(request):
     registered=False
