@@ -27,7 +27,7 @@
     <header>
         <div class="brand">
             <i class="material-icons menu-icon">menu</i>
-            <a href="index.html">Ludescite</a>
+            <a href="{% url 'index' %}">Ludescite</a>
         </div>
         {% if user.is_authenticated %}
         <div class="to-right">
@@ -52,14 +52,10 @@
     </menu>
     <!-- ======================================= End of navbar -->
 
-    <div class="board">
-        
-        {% block body_block %}
+    {% block body_block %}
 
-        {% endblock%}
-
-    </div>
-
+    {% endblock%}
+    
     <!-- footer ============================================== -->
     <footer>
         <div class="container">

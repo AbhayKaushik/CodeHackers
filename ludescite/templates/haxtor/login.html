@@ -3,11 +3,13 @@
 {% block body_block %}
 
 
-
+<div class="board">
+    <div class="board-wrapper">
+        
 <div class="row">
 
         <!-- register-form ============================================== -->
-        <form action="{% url 'haxtor:user_login' %}" method="POST" class="col s12 m6">
+        <form action="{% url 'haxtor:user_login' %}" method="POST" class="col s12 m6 scene-element scene-element--fadeinup">
                 {% csrf_token %}
             <div class="row">
                 <div class="input-field col s12">
@@ -32,7 +34,7 @@
         </div>
 
         <!-- Authentication ============================================== -->
-        <div class="col push-m1 m3 s12 auth">
+        <div class="col push-m1 m3 s12 auth scene-element scene-element--fadeinright">
             <a href="#" class="btn red waves-effect waves-light">Google</a>
             <a href="#" class="btn indigo waves-effect waves-light">Facebook</a>
             <a href="#" class="btn purple waves-effect waves-light">Yahoo!</a>
@@ -40,4 +42,6 @@
 
     </div>
 
+    </div>
+</div>
 {% endblock  %}
