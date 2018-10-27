@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Topic(models.Model):
     diffLevel_LIST=(
-        (1,"easy"),
-        (2,"medium"),
-        (3,"hard")
+        ("1","easy"),
+        ("2","medium"),
+        ("3","hard")
         )
     topicID = models.CharField(max_length=50,unique=True,primary_key=True)
     name = models.CharField(max_length=256,unique=True)
@@ -18,9 +18,9 @@ class Topic(models.Model):
 
 class Questions(models.Model):
     diffLevel_LIST=(
-        (1,"easy"),
-        (2,"medium"),
-        (3,"hard")
+        ("1","easy"),
+        ("2","medium"),
+        ("3","hard")
         )
     quesID = models.CharField(max_length=50,unique=True,primary_key=True)
     topicID = models.ForeignKey(Topic, on_delete=models.PROTECT)
@@ -60,9 +60,9 @@ class UserProfile(models.Model):
 
 class UserProg(models.Model):
     EvolutionTable=(
-        (1,"CupCake"),
-        (2,"Pasterie"),
-        (3,"FudgeCake")
+        ("1","CupCake"),
+        ("2","Pasterie"),
+        ("3","FudgeCake")
     )
     uID=models.ForeignKey(User,on_delete=models.PROTECT)
     progScore=models.IntegerField()
