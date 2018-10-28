@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-def check(uID,Data)
+def check(uID,Data):
     conn = sqlite3.connect('db.sqlite3')
 
     query = "SELECT * FROM haxtor_userprog;"
