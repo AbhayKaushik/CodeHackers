@@ -13,6 +13,7 @@ Tools & Technologies Used
 * HTML
 * CSS
 * Materialize
+* Tensorflow
 
 Running the App
 -----------------
