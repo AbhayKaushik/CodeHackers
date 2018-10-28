@@ -42,6 +42,9 @@ def user_login(request):
 def special(request):
     return HttpResponse("You're Logged in")
 def index(request):
+    # if request.user.is_authenticated():
+    #     return HttpResponseRedirect(reverse("haxtor:dashboard"))
+    # else:
     return render(request,"haxtor/index.html")
 
 
